@@ -1,0 +1,26 @@
+class Solution
+{
+  public:
+    vector<int> findIndex(int a[], int n, int key)
+    {
+        vector<int> ans;
+        for( int t = 0 ; t < n ;t++){
+            if(a[t] == key){
+                ans.push_back(t);
+                break;
+            }
+        }
+        
+        for( int t = n ; t >= 0 ;t--){
+            if(a[t] == key){
+                ans.push_back(t);
+                break;
+            }
+        }
+        if(ans.size() == 0) {
+            ans.resize(2,-1);
+        }
+        return ans;
+    }
+  
+};
