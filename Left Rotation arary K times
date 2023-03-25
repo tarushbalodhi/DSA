@@ -1,0 +1,25 @@
+void leftRotate(int arr[], int k, int n) 
+	{ 
+// 	  long aux[n];
+// 	       int mod = k % n;
+// 	       for(int i = 0; i < n ;i++){
+// 	           aux[i] = arr[(i+mod) % n];
+// 	       }
+	       
+// 	       for(int i = 0; i<n; i++){
+// 	           arr[i] = aux[i];
+// 	       }
+// 	   }
+		
+// 		easy  method:
+            // reverse the arr from 0 to k
+            // then reverse again from k+1 to n
+            // final step is to reverse whole arrr from 0 to n-1
+            
+            // now we have the array rotated k indexes 
+		 
+		 k = k % n;  // this saves time For eg . n = 4 and k = 4 then zero rotation arra will be same
+		 reverse(arr, arr+k);
+		 reverse(arr+k, arr+n);
+		 reverse(arr, arr+n);
+	}
