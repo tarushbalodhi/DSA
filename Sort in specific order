@@ -1,0 +1,19 @@
+void sortIt(long long arr[], long long n)
+    {
+        vector<int> v, x;
+        
+        for( int i = 0 ; i < n ; i++){
+            if(arr[i] % 2 == 0){     // even
+                x.push_back(arr[i]);
+            }
+            else v.push_back(arr[i]);      //odd
+        }
+        sort(v.begin(), v.end(), greater<int>());   // greater function for desc 
+        sort(x.begin(), x.end());       // even arr
+        
+        // now merging above 2 vectors
+        
+        v.insert(v.end(), x.begin(), x.end());
+        
+       copy(v.begin(), v.end(), arr);
+    }
