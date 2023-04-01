@@ -1,0 +1,30 @@
+int findClosest(int arr[], int n, int k) 
+    {
+       int s = 0, e = n-1;
+       int mid, ans = 0;
+       while(s <= e){
+           mid = (s+e)/2;
+           
+           if(arr[mid] == k){
+               return arr[mid];
+           }
+           if(arr[mid] > k){
+               e = mid-1;
+           }
+          else{
+               ans = mid;
+               s = mid+1;
+           }
+       }
+       
+      if(ans < n-1) {
+          int diff = k - arr[ans];   // prev mid position on left
+          int diff1 = arr[ans+1] - k;  // mid position
+          
+          if(diff >= diff1){
+              return arr[ans+1];
+          }
+      }
+      
+      return arr[ans];
+    } 
